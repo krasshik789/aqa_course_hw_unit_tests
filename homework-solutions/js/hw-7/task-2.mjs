@@ -40,6 +40,4 @@ function findLongestWords(sentence) {
   return longestWord;
 }  
 
-console.log(findLongestWords('helis penis zalupa'))
-
 export { isPalindrom, findLongestWords };

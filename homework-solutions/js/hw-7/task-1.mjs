@@ -17,22 +17,21 @@ console.log(mergeArrays([1,2], [3,4], [5,6]))
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
-  let word = sentence.trim().split(" ")
+  const words = sentence.trim().split(" ")
   let result = ""
-  let firstWord = true
 
-  for (let i = 0; i < word.length; i++){
-    if (word[i] === '') continue
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] === '') continue
 
-    if(firstWord) {
-    result = result + word[i].toLowerCase()
-    firstWord = false
+    if (i === 0) {
+      result += words[i].toLowerCase()
     } else {
-    result = result + "_" + word[i][0].toUpperCase() + word[i].slice(1).toLowerCase()
+      result += "_" + words[i][0].toUpperCase() + words[i].slice(1).toLowerCase()
     }
   }
-return result
+  return result
 }
+
 console.log(devideBy(" I am super engineer"))
 /*
   3. Фибаначчи
