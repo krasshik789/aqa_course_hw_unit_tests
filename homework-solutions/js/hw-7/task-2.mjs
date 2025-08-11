@@ -4,8 +4,14 @@
 */
 
 function isPalindrom(word) {
-  // Ваш код
+  if(typeof word !== 'string'){
+    return false
+  }  
+ const lowerWord = word.toLowerCase()
+ const reverseWord = lowerWord.split("").reverse().join('')
+ return lowerWord === reverseWord
 }
+console.log(isPalindrom('Abba'))
 
 /*
  2. findLongestWords()
@@ -15,7 +21,23 @@ function isPalindrom(word) {
 */
 
 function findLongestWords(sentence) {
-  // Ваш код
-}
+  if (typeof sentence !== 'string' || sentence === '') {
+    return [];
+  }
+  const words = sentence.split(' ');
+
+  let maxLength = 0;
+  let longestWord = [];
+
+  for (let word of words) {
+    if (word.length > maxLength) {
+      maxLength = word.length;
+      longestWord = [word];
+    } else if (word.length === maxLength) {
+      longestWord.push(word);
+    }
+  }
+  return longestWord;
+}  
 
 export { isPalindrom, findLongestWords };
